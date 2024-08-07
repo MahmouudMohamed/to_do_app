@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:to_do_app/tabs/TasksList/add_task_bt_sheet.dart';
@@ -33,9 +34,11 @@ class _HomeScreenState extends State<HomeScreen> {
             selectedIndex = index;
             setState(() {});
           },
-          items: const [
-            BottomNavigationBarItem(icon: Icon(Icons.list), label: "Task List",),
-            BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: "Setting"),
+          items:  [
+            BottomNavigationBarItem(icon: Icon(Icons.list),
+              label: "task1".tr(),
+            ),
+            BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: "setting".tr()),
           ],
         ),
       ),

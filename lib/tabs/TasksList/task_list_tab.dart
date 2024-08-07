@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:to_do_app/app_color.dart';
 
@@ -8,7 +9,7 @@ class TaskListTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text("To Do List",style: Theme.of(context).textTheme.titleLarge,),
+        title: Text("todo".tr(),style: Theme.of(context).textTheme.titleLarge,),
       ),
     );
   }
