@@ -11,7 +11,7 @@ void main()async {
   runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider(
-          create: (context) => MyProvider(),
+          create: (context) => MyProvider()..getTheme(),
         ),
       ],
       child: EasyLocalization(

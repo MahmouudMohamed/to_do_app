@@ -31,9 +31,14 @@ class MyThemeData {
             fontSize: 20,
             color: AppColor.whiteColor,
             fontWeight: FontWeight.w400),
+        bodySmall: GoogleFonts.inter(
+            fontSize: 20,
+            color: Colors.black,
+            fontWeight: FontWeight.w400),
       ),
       bottomNavigationBarTheme: BottomNavigationBarThemeData(
         selectedItemColor: AppColor.primaryColor,
+
         elevation: 0,
         backgroundColor: Colors.transparent,
         selectedIconTheme:
@@ -52,7 +57,7 @@ class MyThemeData {
                 width: 5,
               ))),
       bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: AppColor.blackLightColor,
+        backgroundColor: AppColor.backgroundColorLight,
       ));
 
 
@@ -94,6 +99,7 @@ class MyThemeData {
         selectedIconTheme:
             IconThemeData(color: AppColor.primaryColor, size: 35),
         unselectedIconTheme: IconThemeData(color: AppColor.grayColor, size: 35),
+        selectedItemColor: AppColor.primaryColor,
         type: BottomNavigationBarType.fixed,
         showUnselectedLabels: false,
       ),

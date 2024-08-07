@@ -28,6 +28,7 @@ class _HomeScreenState extends State<HomeScreen> {
         shape: CircularNotchedRectangle(),
         notchMargin: 8,
         child: BottomNavigationBar(
+
           elevation: 0,
           currentIndex: selectedIndex,
           onTap: (index) {
@@ -45,7 +46,6 @@ class _HomeScreenState extends State<HomeScreen> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           showModalBottomSheet(
-            backgroundColor: AppColor.backgroundColorLight,
             context: context,
             builder: (context) => AddTaskBtSheet(),
           );

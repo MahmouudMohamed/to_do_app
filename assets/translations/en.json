@@ -7,7 +7,10 @@
   "english":"English",
   "todo":"To Do List",
   "setting":"Setting",
-  "task1":"Task List"
+  "task1":"Task List",
+  "new_task":"Add New Task",
+  "task_tittle":"Enter Your Task Tittle",
+  "task_de":"Enter Your Task Details"
 
 
 }
