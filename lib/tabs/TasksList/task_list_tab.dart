@@ -8,8 +8,7 @@ class TaskListTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.primaryColor,
-        title: Text("To Do List"),
+        title: Text("To Do List",style: Theme.of(context).textTheme.titleLarge,),
       ),
     );
   }

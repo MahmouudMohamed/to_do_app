@@ -9,8 +9,7 @@ class SettingTab extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: AppColor.primaryColor,
-        title: Text("Setting"),
+        title: Text("Setting",style: Theme.of(context).textTheme.titleLarge,),
       ),
     );
   }

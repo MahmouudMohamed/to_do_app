@@ -21,25 +21,21 @@ class _HomeScreenState extends State<HomeScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: AppColor.backgroundColorLight,
       bottomNavigationBar:
       BottomAppBar(
         padding: EdgeInsets.zero,
         shape: CircularNotchedRectangle(),
         notchMargin: 8,
         child: BottomNavigationBar(
-          backgroundColor: Colors.transparent,
           elevation: 0,
           currentIndex: selectedIndex,
           onTap: (index) {
             selectedIndex = index;
             setState(() {});
           },
-          items: [
-            BottomNavigationBarItem(
-                icon: Icon(Icons.list), label: "Task List"),
-            BottomNavigationBarItem(
-                icon: Icon(Icons.settings_outlined), label: "Setting"),
+          items: const [
+            BottomNavigationBarItem(icon: Icon(Icons.list), label: "Task List",),
+            BottomNavigationBarItem(icon: Icon(Icons.settings_outlined), label: "Setting"),
           ],
         ),
       ),
