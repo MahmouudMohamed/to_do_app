@@ -2,7 +2,7 @@ import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:to_do_app/tabs/TasksList/add_task_bt_sheet.dart';
-import 'package:to_do_app/tabs/setting_tab.dart';
+import 'package:to_do_app/tabs/Setting/setting_tab.dart';
 import 'package:to_do_app/tabs/TasksList/task_list_tab.dart';
 
 import 'app_color.dart';

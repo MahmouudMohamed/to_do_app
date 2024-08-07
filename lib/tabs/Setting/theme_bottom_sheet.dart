@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 
 import '../../../Providers/my_provider.dart';
-import '../app_color.dart';
+import '../../app_color.dart';
 
 
 class ThemeBottomSheet extends StatelessWidget {

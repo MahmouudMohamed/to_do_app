@@ -1,10 +1,9 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
-import 'package:to_do_app/tabs/theme_bottom_sheet.dart';
-
-import '../Providers/my_provider.dart';
-import '../app_color.dart';
+import 'package:to_do_app/tabs/Setting/theme_bottom_sheet.dart';
+import '../../Providers/my_provider.dart';
+import '../../app_color.dart';
 import 'language_bottom_sheet.dart';
 
 class SettingTab extends StatelessWidget {
