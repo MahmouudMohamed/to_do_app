@@ -47,7 +47,13 @@ class _HomeScreenState extends State<HomeScreen> {
         onPressed: () {
           showModalBottomSheet(
             context: context,
-            builder: (context) => AddTaskBtSheet(),
+            isScrollControlled: true,
+            builder: (context) => Padding(
+              padding: EdgeInsets.only(
+                bottom: MediaQuery.of(context).viewInsets.bottom,
+              ),
+              child: AddTaskBtSheet(),
+            ),
           );
         },
         child: Icon(

@@ -5,10 +5,12 @@ import 'app_color.dart';
 class MyThemeData {
   static final ThemeData lightTheme = ThemeData(
       primaryColor: AppColor.primaryColor,
+      iconTheme: IconThemeData(color: AppColor.whiteColor),
       scaffoldBackgroundColor: AppColor.backgroundColorLight,
       appBarTheme: AppBarTheme(
         color: AppColor.primaryColor,
         elevation: 0,
+        scrolledUnderElevation: 0
       ),
       textTheme: TextTheme(
         titleLarge: GoogleFonts.poppins(
@@ -58,7 +60,17 @@ class MyThemeData {
               ))),
       bottomSheetTheme: BottomSheetThemeData(
         backgroundColor: AppColor.backgroundColorLight,
-      ));
+      ),
+    cardTheme: CardTheme(
+      margin: EdgeInsets.symmetric(horizontal: 24,vertical: 30),
+      elevation: 0,
+      shape: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+          borderSide: BorderSide(color: Colors.transparent)),
+    ),
+
+
+  );
 
 
 
@@ -82,7 +94,7 @@ class MyThemeData {
             fontWeight: FontWeight.bold),
         displayLarge: GoogleFonts.inter(
             fontSize: 20,
-            color: AppColor.blackLightColor,
+            color: AppColor.whiteColor,
             fontWeight: FontWeight.w600),
         displayMedium: GoogleFonts.inter(
             fontSize: 18,
@@ -113,6 +125,16 @@ class MyThemeData {
                 width: 5,
               ))),
       bottomSheetTheme: BottomSheetThemeData(
-        backgroundColor: AppColor.backgroundColorDark,
-      ));
+        backgroundColor: AppColor.contDarkColor,
+      ),
+
+    cardTheme: CardTheme(
+      margin: EdgeInsets.symmetric(horizontal: 24,vertical: 30),
+      elevation: 0,
+      color: AppColor.contDarkColor,
+      shape: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(25),
+          borderSide: BorderSide(color: Colors.transparent)),
+    ),
+  );
 }

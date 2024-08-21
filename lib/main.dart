@@ -1,6 +1,11 @@
 import 'package:easy_localization/easy_localization.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:to_do_app/Providers/get_date.dart';
+import 'package:to_do_app/firebase_options.dart';
+import 'package:to_do_app/tabs/TasksList/edit_task.dart';
+import 'Auth/register.dart';
 import 'Providers/my_provider.dart';
 import 'home_screen.dart';
 import 'my_theme_data.dart';
@@ -8,10 +13,16 @@ import 'my_theme_data.dart';
 void main()async {
   WidgetsFlutterBinding.ensureInitialized();
   await EasyLocalization.ensureInitialized();
+  await Firebase.initializeApp(
+    options:DefaultFirebaseOptions.currentPlatform
+  );
   runApp(MultiProvider(
       providers: [
         ChangeNotifierProvider(
           create: (context) => MyProvider()..getTheme(),
+        ),
+        ChangeNotifierProvider(
+          create: (context) => GetDate(),
         ),
       ],
       child: EasyLocalization(
@@ -39,6 +50,8 @@ class MyApp extends StatelessWidget {
       initialRoute: HomeScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
+        EditTask.routeName: (context) => EditTask(),
+        RegisterScreen.routeName: (context) => RegisterScreen(),
       },
     );
   }
