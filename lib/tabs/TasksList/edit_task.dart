@@ -19,6 +19,7 @@ class EditTask extends StatelessWidget {
     var proDate = Provider.of<GetDate>(context);
     var formkey = GlobalKey<FormState>();
 
+
     return Scaffold(
       appBar: AppBar(
           title: Text(
@@ -41,11 +42,9 @@ class EditTask extends StatelessWidget {
                   ),
                   CustomTextFormFieldEdit(
                     hint: model.title,
-                    // controller: titleController,
                     length: 20,
                     errorText: "Please Enter Your Task Title",
                     onChanged: (value) {
-                      print(value);
                       model.title = value;
                     },
                   ),
@@ -73,7 +72,7 @@ class EditTask extends StatelessWidget {
                         proDate.getCalendar(context);
                       },
                       child: Text(
-                        "${model.date}".substring(0, 10),
+                        "${model.date}",
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme

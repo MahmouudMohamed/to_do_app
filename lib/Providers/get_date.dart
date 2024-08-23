@@ -5,10 +5,8 @@ import '../model/task_model.dart';
 
 class GetDate extends ChangeNotifier {
   DateTime selectDate = DateTime.now();
-  var formkey = GlobalKey<FormState>();
-  var titleController = TextEditingController();
-  var descriptionController = TextEditingController();
-
+  TextEditingController titleController = TextEditingController();
+  TextEditingController descriptionController = TextEditingController();
 
   Future<DateTime?> getCalendar(context) async {
     DateTime? date = await showDatePicker(
@@ -22,18 +20,15 @@ class GetDate extends ChangeNotifier {
       selectDate = date;
       notifyListeners();
     }
-    return date;
   }
-
-  void addCheckTask() {
-    if (formkey.currentState?.validate() == true) {
-      TaskModel model = TaskModel(
-          title: titleController.text,
-          description: descriptionController.text,
-          date: DateUtils.dateOnly(selectDate).millisecondsSinceEpoch);
-      FirebaseFunctions.addTask(model);
-      notifyListeners();
-    }
+  addCheckTask() {
+    TaskModel model = TaskModel(
+        title: titleController.text,
+        description: descriptionController.text,
+        date: DateUtils.dateOnly(selectDate).millisecondsSinceEpoch);
+    FirebaseFunctions.addTask(model);
+    titleController.clear();
+    descriptionController.clear();
     notifyListeners();
   }
 }
