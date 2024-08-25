@@ -2,7 +2,7 @@ class TaskModel {
   String id;
   String title;
   String description;
-  int date;
+  var date;
   bool isDone;
 
   TaskModel({

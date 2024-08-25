@@ -7,6 +7,7 @@ class GetDate extends ChangeNotifier {
   DateTime selectDate = DateTime.now();
   TextEditingController titleController = TextEditingController();
   TextEditingController descriptionController = TextEditingController();
+  TaskModel? task;
 
   Future<DateTime?> getCalendar(context) async {
     DateTime? date = await showDatePicker(

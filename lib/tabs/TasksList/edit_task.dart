@@ -13,12 +13,12 @@ class EditTask extends StatelessWidget {
 
   EditTask({super.key});
 
+  var formkey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
-    var model = ModalRoute.of(context)?.settings.arguments as TaskModel;
     var proDate = Provider.of<GetDate>(context);
-    var formkey = GlobalKey<FormState>();
-
+      proDate.task = ModalRoute.of(context)?.settings.arguments as TaskModel;
 
     return Scaffold(
       appBar: AppBar(
@@ -41,19 +41,19 @@ class EditTask extends StatelessWidget {
                     textAlign: TextAlign.center,
                   ),
                   CustomTextFormFieldEdit(
-                    hint: model.title,
+                    hint: proDate.task!.title,
                     length: 20,
                     errorText: "Please Enter Your Task Title",
                     onChanged: (value) {
-                      model.title = value;
+                      proDate.task!.title = value;
                     },
                   ),
                   CustomTextFormFieldEdit(
-                    hint: model.description,
+                    hint: proDate.task!.description,
                     lines: 4,
                     errorText: "Please Enter Your Task Details",
                     onChanged: (value) {
-                      model.description = value;
+                      proDate.task?.description = value;
                     },
                   ),
                   Padding(
@@ -72,7 +72,7 @@ class EditTask extends StatelessWidget {
                         proDate.getCalendar(context);
                       },
                       child: Text(
-                        "${model.date}",
+                        "${proDate.task!.date}",
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
@@ -85,9 +85,10 @@ class EditTask extends StatelessWidget {
                     overlayColor: WidgetStateColor.transparent,
                     onTap: () {
                       if (formkey.currentState?.validate() == true) {
-                        model.date = DateUtils.dateOnly(proDate.selectDate)
-                            .millisecondsSinceEpoch;
-                        FirebaseFunctions.updateTask(model);
+                        proDate.task!.date =
+                            DateUtils.dateOnly(proDate.selectDate)
+                                .millisecondsSinceEpoch;
+                        FirebaseFunctions.updateTask(proDate.task!);
                         Navigator.pop(context);
                       }
                     },
