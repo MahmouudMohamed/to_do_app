@@ -13,13 +13,11 @@ class EditTask extends StatelessWidget {
 
   EditTask({super.key});
 
-  var formkey = GlobalKey<FormState>();
-
   @override
   Widget build(BuildContext context) {
     var proDate = Provider.of<GetDate>(context);
-      proDate.task = ModalRoute.of(context)?.settings.arguments as TaskModel;
-
+    proDate.task = ModalRoute.of(context)?.settings.arguments as TaskModel;
+    var formkey = GlobalKey<FormState>();
     return Scaffold(
       appBar: AppBar(
           title: Text(
@@ -72,7 +70,7 @@ class EditTask extends StatelessWidget {
                         proDate.getCalendar(context);
                       },
                       child: Text(
-                        "${proDate.task!.date}",
+                        "${proDate.selectDate.day}/${proDate.selectDate.month}/${proDate.selectDate.year}",
                         textAlign: TextAlign.center,
                         style: Theme.of(context)
                             .textTheme
