@@ -33,29 +33,29 @@ class _RegisterScreenState extends State<RegisterScreen> {
       width: double.infinity,
       decoration: BoxDecoration(
           color: AppColor.backgroundColorLight,
-          image: DecorationImage(
+          image: const DecorationImage(
               image: AssetImage("assets/images/bg.png"), fit: BoxFit.fill)),
       child: Scaffold(
-        // resizeToAvoidBottomInset: false,
-        // bottomNavigationBar: InkWell(
-        //   overlayColor: WidgetStateColor.transparent,
-        //   onTap: () {
-        //     Navigator.pushNamed(context, LoginScreen.routeName);
-        //   },
-        //   child: Padding(
-        //     padding: const EdgeInsets.all(40.0),
-        //     child: Text.rich(
-        //         textAlign: TextAlign.center,
-        //         TextSpan(children: [
-        //           TextSpan(
-        //             text: " I have an Account?",
-        //           ),
-        //           TextSpan(
-        //             text: " Login",
-        //           ),
-        //         ])),
-        //   ),
-        // ),
+        resizeToAvoidBottomInset: false,
+        bottomNavigationBar: InkWell(
+          overlayColor: WidgetStateColor.transparent,
+          onTap: () {
+            Navigator.pushNamed(context, LoginScreen.routeName);
+          },
+          child: const Padding(
+            padding: EdgeInsets.all(40.0),
+            child:Text.rich(
+                textAlign: TextAlign.center,
+                TextSpan(children: [
+                  TextSpan(
+                    text: " I have an Account?",
+                  ),
+                  TextSpan(
+                    text: " Login",
+                  ),
+                ])),
+          ),
+        ),
         backgroundColor: Colors.transparent,
         appBar: AppBar(
           title: Text("Create Account"),
@@ -88,7 +88,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                         return "Please Enter Your Email";
                       }
                       final bool emailValid = RegExp(
-                              r"^[a-zA-Z0-9.a-zA-Z0-9.!#$%&'*+-/=?^_`{|}~]+@gmail+\.com+")
+                              r"^[a-zA-Z0-9.a-zA-Z0-9!#$%&'*+-/=?^_`{|}~]+@gmail+\.com+")
                           .hasMatch(value);
                       if (!emailValid) {
                         return "EX:example@gmail.com";
@@ -144,7 +144,7 @@ class _RegisterScreenState extends State<RegisterScreen> {
                     child: Text("Guset"),
                   ),
 
-                  Text("mahgmoud")
+                  const Text("mahmoud")
                 ],
               ),
             ),

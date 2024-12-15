@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
       themeMode: provider.mode,
       theme: MyThemeData.lightTheme,
       darkTheme: MyThemeData.darkTheme,
-      initialRoute: HomeScreen.routeName,
+      initialRoute: RegisterScreen.routeName,
       routes: {
         HomeScreen.routeName: (context) => HomeScreen(),
         EditTask.routeName: (context) => EditTask(),

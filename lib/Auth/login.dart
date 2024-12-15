@@ -20,7 +20,7 @@ class LoginScreen extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
           color: AppColor.backgroundColorLight,
-          image: DecorationImage(
+          image: const DecorationImage(
               image: AssetImage("assets/images/bg.png"), fit: BoxFit.fill)),
       child: Scaffold(
         bottomNavigationBar: InkWell(
@@ -28,8 +28,8 @@ class LoginScreen extends StatelessWidget {
           onTap: () {
             Navigator.pushNamed(context, RegisterScreen.routeName);
           },
-          child: Padding(
-            padding: const EdgeInsets.all(40.0),
+          child: const Padding(
+            padding: EdgeInsets.all(40.0),
             child: Text.rich(
                 textAlign: TextAlign.center,
                 TextSpan(children: [
@@ -44,7 +44,7 @@ class LoginScreen extends StatelessWidget {
         ),
         backgroundColor: Colors.transparent,
         appBar: AppBar(
-          title: Text("Login"),
+          title: const Text("Login"),
           centerTitle: true,
           backgroundColor: Colors.transparent,
         ),

@@ -14,13 +14,14 @@ class GetDate extends ChangeNotifier {
         context: context,
         firstDate: DateTime.now(),
         initialDate: selectDate,
-        lastDate: DateTime.now().add(Duration(
+        lastDate: DateTime.now().add(const Duration(
           days: 10000,
         )));
     if (date != null) {
       selectDate = date;
       notifyListeners();
     }
+    return null;
   }
   addCheckTask() {
     TaskModel model = TaskModel(
